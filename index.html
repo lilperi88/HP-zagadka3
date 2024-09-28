@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zagadka 1</title>
+    <title>Zagadka 3</title>
     <style>
         body {
             background-color: black; /* Czarny kolor tła */
@@ -58,7 +58,7 @@
     <img src="kapelusz-czarownicy.jpg" alt="Opis obrazka" id="mainImage">
 
         <!-- Nagłówek -->
-    <h1>Pod jednym z kapeluszy kryje się kolejna zagadka. <br>
+    <h1>Kolejną zagadkę znajdziecie pod jednym z kapeluszy. <br>
         Rozwiążcie ją i wpiszcie hasło tutaj: </h1>
     
     <!-- Pole do wprowadzenia hasła -->
@@ -82,7 +82,7 @@
             var secretImage = document.getElementById("secretImage");
 
             if (haslo === poprawneHaslo) {
-                message.textContent = "Brawo! To prawidłowe hasło. Już pamiętam gdzie schowałem klucz!";
+                message.textContent = "Brawo! To prawidłowe hasło. Już wiem, gdzie schowany jest klucz!";
                 message.style.color = "green";
                 secretImage.classList.remove("hidden"); // Wyświetlenie tajnego obrazka
             } else {
