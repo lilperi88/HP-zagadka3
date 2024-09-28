@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zagadka 1</title>
+    <style>
+        body {
+            background-color: black; /* Czarny kolor tła */
+            color: white; /* Biały tekst */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            height: 100vh; /* Wysokość strony na 100% ekranu */
+            display: flex;
+            justify-content: center; /* Centruje poziomo */
+            align-items: center; /* Centruje pionowo */
+             text-align: center; 
+            flex-direction: column; /* Ustawia elementy w pionie, jeden pod drugim */
+        }
+        img {
+            width: 150px; /* Szerokość obrazka */
+            height: auto; /* Zachowanie proporcji obrazka */
+            margin: 20px 0; /* Dodaje odstęp między obrazkiem a innymi elementami */
+        }
+        input[type="password"] {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: none;
+            width: 300px; /* Szerokość pola hasła */
+            text-align: center; /* Wyśrodkowanie tekstu w polu */
+            margin-bottom: 20px; /* Odstęp między polem hasła a przyciskiem */
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .message {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Dodanie obrazka (twój własny obrazek) -->
+    <img src="zgredek.png" alt="Opis obrazka" id="mainImage">
+
+        <!-- Nagłówek -->
+    <h1>O nie! <br>
+        Zgredek zapomniał gdzie schował klucz do kłódki! <br>
+        Na szczęście zapisał sobie kilka wskazówek jak go znaleźć. <br>
+        Pierwszą z nich ukrył w jednym z kociołków. <br>
+        Znajdźcie ją i wpiszcie tutaj: </h1>
+    
+    <!-- Pole do wprowadzenia hasła -->
+    <input type="password" id="password" placeholder="Wprowadź hasło">
+
+    <!-- Przycisk do zatwierdzenia hasła -->
+    <button onclick="sprawdzHaslo()">Zatwierdź</button>
+
+    <!-- Wiadomość o poprawności hasła -->
+    <div class="message" id="message"></div>
+
+    <!-- Obrazek do wyświetlenia po poprawnym wpisaniu hasła -->
+    <img src="niffler.png" alt="Tajny obrazek" class="hidden" id="secretImage">
+
+    <script>
+        // Funkcja do sprawdzania poprawności hasła
+        function sprawdzHaslo() {
+            var haslo = document.getElementById("password").value;
+            var poprawneHaslo = "horkruks"; // Tutaj wpisz swoje hasło
+            var message = document.getElementById("message");
+            var secretImage = document.getElementById("secretImage");
+
+            if (haslo === poprawneHaslo) {
+                message.textContent = "Brawo! To prawidłowe hasło. Następną wskazówkę ukradł:";
+                message.style.color = "green";
+                secretImage.classList.remove("hidden"); // Wyświetlenie tajnego obrazka
+            } else {
+                message.textContent = "Błędne hasło. Spróbuj ponownie.";
+                message.style.color = "red";
+                secretImage.classList.add("hidden"); // Ukrycie obrazka w przypadku błędnego hasła
+            }
+        }
+    </script>
+
+</body>
+</html>
